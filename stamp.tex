@@ -1,0 +1,23 @@
+\documentclass[a4paper,twoside]{article}
+
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{forloop}
+\usepackage{geometry}
+
+\geometry{margin={5mm,16mm}}
+
+\newcommand{\headerText}[1]{\makebox{\colorbox{white}{\texttt{#1}}}}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{\headerText{Seite \thepage}}
+\fancyhead[LO,RE]{\headerText{\attachmentName}}
+\fancyfoot{}
+
+\newcounter{pagenumber}
+
+\begin{document}
+\forloop{pagenumber}{1}{\value{pagenumber} < \pageCount}{
+  \newpage ~
+}
+\end{document}
